@@ -17,6 +17,15 @@ Once the app is running, play with kthe touchbar, you should see something like
 
 ---
 
+# Demo 
+![rainbow](https://user-images.githubusercontent.com/16429579/31844364-83b4e5cc-b5f8-11e7-9d2a-c55e15294a53.gif)
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
 # Code of conduct
 In the interest of fostering an open and welcoming environment, we as
 contributors and maintainers pledge to making participation in our project and
