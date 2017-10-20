@@ -1,9 +1,7 @@
-import {app, Menu, TouchBar, BrowserWindow} from 'electron';
 import path from 'path';
-
+import {app, Menu, BrowserWindow} from 'electron';
 import touchbar from './libs/touchbar';
 import menu from './libs/menu';
-
 
 app.on('ready', () => {
 	mainWindow(touchbar, menu);

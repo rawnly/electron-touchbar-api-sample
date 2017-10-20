@@ -1,5 +1,6 @@
 import {app, Menu, BrowserWindow} from 'electron';
 import is from 'electron-is';
+import isDev from 'electron-is-dev';
 
 const template = [
 	{
@@ -21,7 +22,13 @@ const template = [
 		submenu: [
 			{role: 'reload'},
 			{role: 'forcereload'},
-			{role: 'toggledevtools'},
+			{ 
+				label: 'DevTools',
+				enabled: isDev,
+				click() {
+					BrowserWindow.getFocusedWindow().webContents.toggleDevTools();
+				}
+			},
 			{type: 'separator'},
 			{role: 'resetzoom'},
 			{role: 'zoomin'},
@@ -34,22 +41,21 @@ const template = [
 		role: 'window',
 		submenu: [
 			{role: 'minimize'},
-			{role: 'close'},
-			{ 
-				label: 'DevTools',
-				enabled: !is.dev(),
-				click() {
-					BrowserWindow.getFocusedWindow().webContents.toggleDevTools();
-				}
-			}
+			{role: 'close'}
 		]
 	},
 	{
 		role: 'help',
 		submenu: [
 			{
-				label: 'Learn More',
-				click () { require('electron').shell.openExternal('https://electron.atom.io'); }
+				label: 'GitHub',
+				click () { require('electron').shell.openExternal('https://github.com/rawnly/electron-touchbar-example'); }
+			}, {
+				label: 'Someone sad "issues"?',
+				click () { require('electron').shell.openExternal('https://github.com/rawnly/electron-touchbar-example/issues'); }
+			}, {type: 'separator'}, {
+				label: 'Author\'s website',
+				click () { require('electron').shell.openExternal('https://federicovitale.me'); }
 			}
 		]
 	}
