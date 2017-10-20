@@ -1,0 +1,30 @@
+{
+  "name": "Electron TouchBar Boilerplate",
+  "description": "Electron TouchBar example",
+  "main": "app/app.js",
+  "authors": [
+    "Federico Vitale <fedevitale99@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "electron",
+    "app",
+    "touchbar",
+    "macbookpro",
+    "macbook",
+    "2017"
+  ],
+  "homepage": "https://federicovitale.me/projects/electron-touchbar-example",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./app/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "^2.5.2"
+  }
+}

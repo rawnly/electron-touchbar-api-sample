@@ -1,0 +1,55 @@
+{
+ "name": "electron-touchbar-boilerplate",
+ "version": "1.0.0",
+ "main": "app/app.js",
+ "license": "MIT",
+ "author": {
+  "name": "Federico Vitale",
+  "email": "fedevitale99@gmail.com",
+  "url": "federicovitale.me"
+ },
+ "repository": {
+  "type": "git",
+  "url": "rawnly/electron-touchbar-boilerplate"
+ },
+ "bugs": {
+  "email": "fedevitale99@gmail.com",
+  "url": "https://github.com/rawnly/electron-touchbar-boilerplate/issues"
+ },
+ "keywords": [
+  "electron",
+  "boilerplate",
+  "touchbar"
+ ],
+ "dependencies": {
+  "electron": "^1.7.9",
+  "electron-is": "^2.4.0",
+  "titlebar": "^1.4.0"
+ },
+ "devDependencies": {
+  "babel": "^6.23.0",
+  "babel-core": "^6.26.0",
+  "babel-preset-es2015": "^6.24.1",
+  "babel-register": "^6.26.0",
+  "babelify": "^7.3.0",
+  "eslint": "^4.9.0",
+  "eslint-config-airbnb-base": "^12.1.0",
+  "eslint-plugin-import": "^2.8.0",
+  "gulp": "^3.9.1",
+  "gulp-autoprefixer": "^4.0.0",
+  "gulp-babel": "^7.0.0",
+  "gulp-browserify": "^0.5.1",
+  "gulp-sass": "^3.1.0",
+  "vinyl-source-stream": "^1.1.0",
+  "xo": "^0.18.2"
+ },
+ "scripts": {
+  "watch": "gulp watch",
+  "preBuild": "bower install && npm install",
+  "test": "eslint src/app.js",
+  "build": "gulp build",
+  "start": "npm run clean && npm run build && bower install && electron .",
+  "clean": "rm -rf app",
+  "restore": "npm run clean && rm -rf node_modules"
+ }
+}
