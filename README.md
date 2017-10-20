@@ -12,7 +12,7 @@
 Once the app is running, play with kthe touchbar, you should see something like
 ![touchbar](https://user-images.githubusercontent.com/16429579/31844025-8f63b29c-b5f6-11e7-9d32-c6dbe38013cf.png)
 
-# Code of conduct
+# Code of conduct
 In the interest of fostering an open and welcoming environment, we as
 contributors and maintainers pledge to making participation in our project and
 our community a harassment-free experience for everyone, regardless of age, body
