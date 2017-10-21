@@ -6,18 +6,12 @@ let app = new Vue({
 	el: '#root',
 	data: {
 		color: 'Pick a color',
-		style: 'background-color: #000000'
-	},
-
-	methods: {
-		setStyle() {
-			this.style = "background-color: " + this.color;
-		}
+		style: 'background-color: #292944'
 	}
 });
 
 
-ipc.on('ready', (info, data) => {
+ipc.on('color-input', (info, data) => {
 	app.style = 'background-color: ' + data.color;
 	app.color = data.color;
 });

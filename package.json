@@ -23,11 +23,11 @@
   "touchbar"
  ],
  "scripts": {
-  "watch": "gulp watch",
-  "preBuild": "bower install && npm install",
+  "watch": "gulp watch --silent",
+  "preBuild": "bower install --silent && npm install",
   "test": "eslint src/app.js",
-  "build": "gulp build",
-  "start": "npm run clean && clear && npm run build && clear && bower install && clear && electron .",
+  "build": "gulp build --silent",
+  "start": "npm run clean && clear && npm run build && clear && bower install --silent && clear && electron .",
   "prod": "ELECTRON_IS_DEV='production' npm run start",
   "clean": "rm -rf app",
   "restore": "npm run clean && rm -rf node_modules"

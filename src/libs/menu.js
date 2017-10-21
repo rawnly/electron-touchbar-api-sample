@@ -2,6 +2,8 @@ import {app, Menu, BrowserWindow} from 'electron';
 import is from 'electron-is';
 import isDev from 'electron-is-dev';
 
+// New menu (from electron documentation)
+
 const template = [
 	{
 		label: 'Edit',
@@ -22,12 +24,10 @@ const template = [
 		submenu: [
 			{role: 'reload'},
 			{role: 'forcereload'},
+			// Disable dev tools if "ELECTRON_IS_DEV~=production"
 			{ 
-				label: 'DevTools',
 				enabled: isDev,
-				click() {
-					BrowserWindow.getFocusedWindow().webContents.toggleDevTools();
-				}
+				role: 'toggledevtools'
 			},
 			{type: 'separator'},
 			{role: 'resetzoom'},

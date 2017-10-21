@@ -1,2 +1,4 @@
 node_modules
 app
+npm-debug.log
+yarn-error.log

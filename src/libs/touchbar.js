@@ -1,32 +1,41 @@
 import {BrowserWindow, TouchBar} from 'electron';
+import isDev from 'electron-is-dev';
+
 const {TouchBarSpacer, TouchBarGroup, TouchBarButton, TouchBarColorPicker, TouchBarLabel} = TouchBar;
 
+// separate it for manipulation in ColorPicker@change
 let activeColor = new TouchBarLabel({
-	label: 'Active Color',
-	backgroundColor: '#000'
+	label: '<-- Select a color to start.',
+	textColor: '#fff'
 });
 
+let env = new TouchBarButton({
+	label: 'ENVIROMENT: ' + isDev ? 'development' : 'production',
+	backgroundColor: isDev ? '#5a00ff' : '#00c4ff'
+});
+
+let activeSpace = new TouchBarSpacer({size: 'flexible'});
+
+// create a new touchbar object
 let touchbar = new TouchBar([
 	new TouchBarColorPicker({
 		change(color) {
-			activeColor.label = 'Selected: ' + color.toString();
+			activeColor.label = color.toString();
 			activeColor.textColor = color.toString();
-			BrowserWindow.getFocusedWindow().webContents.send('ready', {color});
+			activeSpace.size = 'flexible';
+			console.log(activeSpace.size);
+
+			BrowserWindow.getFocusedWindow().webContents.send('color-input', {color});
 		}
 	}),
-	new TouchBarSpacer({size: 'flexible'}),
+	activeSpace,
 	activeColor,
 	new TouchBarSpacer({size: 'flexible'}),
 	new TouchBarGroup({
 		label: 'Window',
 		items: [
-			new TouchBarButton({
-				label: 'Quit',
-				backgroundColor: '#FF3377',
-				click() {
-					BrowserWindow.getFocusedWindow().close();
-				}
-			}),
+			// Some gimmicks
+			env,
 			new TouchBarButton({
 				label: 'Minimize',
 				backgroundColor: '#FFcf11',
@@ -35,10 +44,10 @@ let touchbar = new TouchBar([
 				}
 			}),
 			new TouchBarButton({
-				label: 'Full Screen',
-				backgroundColor: '#33cf66',
+				label: 'Quit',
+				backgroundColor: '#FF3377',
 				click() {
-					BrowserWindow.getFocusedWindow().maximize();
+					BrowserWindow.getFocusedWindow().close();
 				}
 			})
 		]
