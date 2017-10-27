@@ -1,5 +1,5 @@
-# Electron Touchbar
-> An useful example of [touchbar API](https://electron.atom.io/docs/api/touch-bar/)
+# Electron Touchbar API Sample
+> Electron sample  [touchbar API](https://electron.atom.io/docs/api/touch-bar/)
 
 ![screenshot](screenshots/window.png)
 
