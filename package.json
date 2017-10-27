@@ -1,7 +1,7 @@
 {
   "name": "electron",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "app/main.js",
   "license": "MIT",
   "devDependencies": {
     "electron": "^1.7.9"
