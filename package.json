@@ -1,9 +1,14 @@
 {
-  "name": "touchbar-example",
+  "name": "electron",
   "version": "1.0.0",
   "main": "main.js",
   "license": "MIT",
   "devDependencies": {
     "electron": "^1.7.9"
+  },
+  "repository": "https://github.com/Rawnly/electron-touchbar-boilerplate.git",
+  "author": "Federico Vitale <fedevitale99@gmail.com>",
+  "scripts": {
+	  "start": "electron ."
   }
 }

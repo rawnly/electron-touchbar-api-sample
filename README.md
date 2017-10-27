@@ -1,7 +1,7 @@
 # Electron Touchbar
 > An useful example of [touchbar API](https://electron.atom.io/docs/api/touch-bar/)
 
-![screenshot](https://user-images.githubusercontent.com/16429579/31844034-9ad80d94-b5f6-11e7-80ea-a59307034882.png)
+![screenshot](screenshots/window.png)
 
 # Installation
 1. Clone this repo and extract it
@@ -9,20 +9,15 @@
 3. Run it via `npm start`
 
 # Usage
-Once the app is running, play with kthe touchbar, you should see something like
+Once the app is running, play with the touchbar! It you should be something like this one below:
 <br>
 <br>
-![touchbar](https://user-images.githubusercontent.com/16429579/31844025-8f63b29c-b5f6-11e7-9d32-c6dbe38013cf.png)
+![touchbar](screenshots/touchbar.png)
 <br>
 
 ---
 
-# Demo 
-![rainbow](https://user-images.githubusercontent.com/16429579/31844364-83b4e5cc-b5f8-11e7-9d2a-c55e15294a53.gif)
 
-<br>
-<br>
-<br>
 <br>
 <br>
 
