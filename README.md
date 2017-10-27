@@ -5,7 +5,7 @@
 
 # Installation
 1. Clone this repo and extract it
-2. Install dependencies (`npm run preBuild`)
+2. Install dependencies (`npm install`)
 3. Run it via `npm start`
 
 # Usage
@@ -15,8 +15,17 @@ Once the app is running, play with the touchbar! It you should be something like
 ![touchbar](screenshots/touchbar.png)
 <br>
 
+There are all `TouchBar` elements: 
+- `Button` - Restore Defaults (restore defaults parameters)
+- `Color Picker` - (change text color)
+- `Slider` - Inside options (change the font size of the `H1`)
+- `Group` - `Button`, `PopOver`, `Color Picker`
+- `Scrubbler` - Inside options  (change the `H1` text)
+- `Pop Over` - Options
+- `Segmented Controller` - The On\Off switch (toggle if color can change true/false)
+- `Spacer`
+- `Label` - App name 
 ---
-
 
 <br>
 <br>
