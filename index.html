@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title> Touch Bar Sample </title>
+
+	<style type="text/css">
+		* {
+			box-sizing: border-box;
+		}
+		html,
+		body {
+			margin: 0;
+			font: 18px 'Helvetica', sans-serif;
+			background: whitesmoke;
+			color: #292944;
+			text-align: center;
+		}
+
+		section {
+			padding: 25px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			width: 100%;
+			height: 100%;
+			min-height: 100vh;
+		}
+
+		#stats {
+			list-style: none;
+			text-align: left;
+			position: absolute;
+			left: 20px;
+			top: 20px;
+
+			width: auto;
+			height: auto;
+
+			font-size: .85em;
+		}
+
+		h1 {
+			font-size: 36px;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<ul id="stats">
+			<li> <b> color:</b> <i id="color">#292944</i> </li>
+			<li> <b> color can change:</b> <i id="status"> true </i> </li>
+			<li> <b> font:</b> <i id="font">36px</i> </li>
+		</ul>
+		<h1 id="action"> Electron </h1>
+	</section>
+
+	<script>
+		const { ipcRenderer, BrowserWindow } = require('electron');
+		const ipc = ipcRenderer;
+
+
+		const defaults = {
+			color: '#292944',
+			size: '36px',
+			status: true,
+			sentence: 'Electron'
+		}
+
+		let colorChange = true;
+		
+		ipc.on('restore', (event, data) => {
+			document.querySelector('#action').innerHTML = defaults.sentence;
+			document.querySelector('#action').style.color = defaults.color;
+			document.querySelector('#action').style.fontSize = defaults.size;
+			
+			colorChange = defaults.status;
+			document.querySelector('#status').innerHTML = colorChange;
+			document.querySelector('#color').innerHTML = defaults.color;
+			document.querySelector('#font').innerHTML = defaults.size;
+		})
+
+		ipc.on('pressed', (event, data) => {
+			document.querySelector('#action').innerHTML = data;
+		})
+
+		ipc.on('segment', (event, data) => {
+			colorChange = data.index == 0 ? true : false;
+			document.querySelector('#status').innerHTML = colorChange;				
+		})
+
+		ipc.on('color', (event, c) => {
+			if (colorChange) {
+				document.querySelector('#action').style.color = c;
+				document.querySelector('#color').innerHTML = c;
+			} else {
+				document.querySelector('#status').innerHTML = colorChange;				
+			}
+		})
+
+		ipc.on('slider', (event, data) => {
+			document.querySelector('#font').innerHTML = data + 'px';
+			document.querySelector('#action').style.fontSize = data + 'px';
+		})
+	</script>
+</body>
+</html>

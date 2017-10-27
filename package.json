@@ -1,54 +1,9 @@
 {
- "name": "electron-touchbar-boilerplate",
- "version": "1.0.0",
- "main": "app/app.js",
- "license": "MIT",
- "env": "prod",
- "author": {
-  "name": "Federico Vitale",
-  "email": "fedevitale99@gmail.com",
-  "url": "federicovitale.me"
- },
- "repository": {
-  "type": "git",
-  "url": "rawnly/electron-touchbar-boilerplate"
- },
- "bugs": {
-  "email": "fedevitale99@gmail.com",
-  "url": "https://github.com/rawnly/electron-touchbar-boilerplate/issues"
- },
- "keywords": [
-  "electron",
-  "boilerplate",
-  "touchbar"
- ],
- "scripts": {
-  "watch": "gulp watch --silent",
-  "preBuild": "bower install --silent && npm install",
-  "test": "eslint src/app.js",
-  "build": "gulp build --silent",
-  "start": "npm run clean && clear && npm run build && clear && bower install --silent && clear && electron .",
-  "prod": "ELECTRON_IS_DEV='production' npm run start",
-  "clean": "rm -rf app",
-  "restore": "npm run clean && rm -rf node_modules"
- },
- "dependencies": {
-  "babel": "^6.23.0",
-  "babel-core": "^6.26.0",
-  "babel-preset-es2015": "^6.24.1",
-  "babel-register": "^6.26.0",
-  "babelify": "^7.3.0",
-  "bower": "^1.8.2",
-  "electron": "^1.7.9",
-  "electron-is": "^2.4.0",
-  "electron-is-dev": "^0.3.0",
-  "eslint": "^4.9.0",
-  "eslint-config-airbnb-base": "^12.1.0",
-  "eslint-plugin-import": "^2.8.0",
-  "gulp": "^3.9.1",
-  "gulp-autoprefixer": "^4.0.0",
-  "gulp-babel": "^7.0.0",
-  "gulp-browserify": "^0.5.1",
-  "gulp-sass": "^3.1.0"
- }
+  "name": "touchbar-example",
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^1.7.9"
+  }
 }
