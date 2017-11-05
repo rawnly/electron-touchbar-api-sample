@@ -9,13 +9,13 @@
 3. Run it via `npm start`
 
 # Usage
-Once the app is running, play with the touchbar! It you should be something like this one below:
+Once the app is running, play with the touch bar! It you should be something like this one below:
 <br>
 <br>
-![touchbar](screenshots/touchbar.png)
+![touch bar](screenshots/touchbar.png)
 <br>
 
-There are all `TouchBar` elements: 
+There are all `Touch Bar` elements: 
 - `Button` - Restore Defaults (restore defaults parameters)
 - `Color Picker` - (change text color)
 - `Slider` - Inside options (change the font size of the `H1`)
