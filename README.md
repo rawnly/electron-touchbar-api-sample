@@ -1,5 +1,5 @@
-# Electron Touchbar API Sample
-> Electron sample  [touchbar API](https://electron.atom.io/docs/api/touch-bar/)
+# Electron _Touchbar_ API
+> Electron example  [Touchbar API](https://electron.atom.io/docs/api/touch-bar/)
 
 ![screenshot](screenshots/window.png)
 
@@ -15,7 +15,7 @@ Once the app is running, play with the touchbar! It you should be something like
 ![touchbar](screenshots/touchbar.png)
 <br>
 
-There are all `TouchBar` elements: 
+There are all `touchbar` elements: 
 - `Button` - Restore Defaults (restore defaults parameters)
 - `Color Picker` - (change text color)
 - `Slider` - Inside options (change the font size of the `H1`)
