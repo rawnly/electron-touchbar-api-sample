@@ -17,7 +17,7 @@ function ready() {
 	// "Fill" the window
 	mainWindow = new BrowserWindow({
 		width: 800,
-		heihgt: 800,
+		height: 800,
 		resizable: false,
 		fullscreenable: false
 	})
